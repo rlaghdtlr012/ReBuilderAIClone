@@ -14,11 +14,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "noImplicitAny": false,
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@pages/*": ["src/pages/*"]
+      "@/pages/*": ["src/pages/*"]
     }
   },
   "include": ["src"],

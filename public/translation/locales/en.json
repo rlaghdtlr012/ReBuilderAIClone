@@ -65,15 +65,15 @@
     "scanningPredictionContentThirdLine": "(Standard precision within 0.2mm, when applying volatile spray)",
     "scanningPredictionContentFourthLine": "3D scanning process, which typically took over an hour with",
     "scanningPredictionContentFifthLine": "existing tools, can now be completed in under three minutes.",
-    "spatialVolumeTitleFirstLine": "",
-    "spatialVolumeTitleSecondLine": "",
-    "spatialVolumeTitleThirdLine": "",
-    "spatialVolumeContentFirstLine": "",
-    "spatialVolumeContentSecondLine": "",
-    "spatialVolumeContentThirdLine": "",
-    "spatialVolumeContentFourthLine": "",
-    "spatialVolumeContentFifthLine": "",
-    "spatialVolumeContentSixthLine": ""
+    "spatialVolumeTitleFirstLine": "Spatial Volumetric Rendering",
+    "spatialVolumeTitleSecondLine": "Technology for High-quality",
+    "spatialVolumeTitleThirdLine": "Image Synthesis",
+    "spatialVolumeContentFirstLine": "Using Volumetric rendering technology, you can quickly capture",
+    "spatialVolumeContentSecondLine": "space and create drone-like videos or distribute 3D space",
+    "spatialVolumeContentThirdLine": "through a web viewer.",
+    "spatialVolumeContentFourthLine": "Areas that cannot be captured with existing 3D models, such as ",
+    "spatialVolumeContentFifthLine": "reflections or lighting that change depending on the viewpoint,",
+    "spatialVolumeContentSixthLine": "can also be captured in 3D through a rendering engine based on view synthesis, allowing for confirmation anytime, anywhere."
   },
   "service": {
     "3DModel": "3D model",
@@ -139,11 +139,6 @@
     "news": "NEWS",
     "newsSubTitle": "RebuilderAI in the Media"
   },
-  "career": {
-    "lookingForCrew": "Looking for colleagues to pioneer new markets together",
-    "pleaseApply": "If you agree with the values and culture that the RebuilderAI team pursues, don't hesitate to apply.",
-    "RecruitingNotices": "View Careers"
-  },
   "contact": {
     "inquire": "Please inquire about any questions regarding VRIN 3D",
     "title": "Title",
@@ -167,5 +162,10 @@
     "location": "Location",
     "locationDetail": "NAVER 1784, 95 Jeongjail-ro, Bundang-gu, Seongnam-si, Gyeonggi-do, Republic of Korea",
     "navigationSearch": "Search for “NAVER 1784” in the navigation."
+  },
+  "career": {
+    "lookingForCrew": "Looking for colleagues to pioneer new markets together",
+    "pleaseApply": "If you agree with the values and culture that the RebuilderAI team pursues, don't hesitate to apply.",
+    "RecruitingNotices": "View Careers"
   }
 }

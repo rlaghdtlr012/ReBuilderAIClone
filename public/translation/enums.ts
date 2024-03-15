@@ -1,8 +1,6 @@
 export enum i18nLanguageType {
-  KR = 'KR',
-  EN = 'EN',
-  JP = 'JP',
-  CN = 'CN',
+  KR = 'ko',
+  EN = 'en',
 }
 
 export enum languageType {

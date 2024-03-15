@@ -33,7 +33,47 @@
     }
   },
   "technology": {
-    ""
+    "mobileCameraTitle": "휴대폰 카메라 센서 기반의",
+    "mobileCameraContent": "차세대 3D VISION AI, VRIN 3D",
+    "VRINContent": "VRIN 3D은 대체 불가능한 차세대 3D 비전 AI로 발전하고 있습니다.",
+    "lightSourcePrediction": "반사광 추론 기술",
+    "surfaceMaterialEstimation": "표면재질 추론 기술",
+    "highLevelScanningPrediction": "실측 스캐닝 정밀도",
+    "spatialVolumetricRendering": "공간 렌더링 기술",
+    "predictionTitleFirstLine": "금속성 물체 스캐닝을 위한",
+    "predictionTitleSecondLine": "반사광 추론 기술",
+    "predictionContentFirstLine": "Inverse Rendering 기반의 주변광 추론 기술을 통해",
+    "predictionContentSecondLine": "이미지에서 반사광을 제거하고 정확한 텍스처 복원이 가능합니다.",
+    "predictionContentThirdLine": "주변광에 의한 반사는 물체의 원본 색상을 예측하기 어렵게 만들고,",
+    "predictionContentFourthLine": "특히 반사가 심한 물체의 경우 스팟이 하얗게 뜨는 하이라이팅으로",
+    "predictionContentFifthLine": "인해 스캐닝 후 색상이 매우 어색해집니다.",
+    "predictionContentSixthLine": "리빌더AI에서는 물체 촬영 시 조명 정보를 함께 캡처하고, 특허",
+    "predictionContentSeventhLine": "기술을 통해 물체 표면의 반사광을 정확하게 예측하여 모델의",
+    "predictionContentEighthLine": "하이라이팅을 제거할 수 있습니다.",
+    "surfaceMaterialTitleFirstLine": "PBR 텍스처 복원을 위한",
+    "surfaceMaterialTitleSecondLine": "표면재질 추론 기술",
+    "surfaceMaterialContentFirstLine": "Inverse Rendering 기반의 재질 예측 AI를 통해",
+    "surfaceMaterialContentSecondLine": "반사와 거칠기 정보도 함께 스캐닝이 가능합니다.",
+    "surfaceMaterialContentThirdLine": "(Automatic PBR-texturing)",
+    "surfaceMaterialContentFourthLine": "대용량 재질 추론 데이터를 내부 구축하여 투명한 재질이나",
+    "surfaceMaterialContentFifthLine": "금속성 재질의 사물들도 반사광을 제외한 원본 색상의 복원이",
+    "surfaceMaterialContentSixthLine": "가능하며, 보다 정밀한 3D 스캐닝을 실현해 나가고 있습니다.",
+    "scanningPredictionTitleFirstLine": "상용 3D ToF 스캐너 수준의",
+    "scanningPredictionTitleSecondLine": "실측 스캐닝 정밀도",
+    "scanningPredictionContentFirstLine": "스마트폰 영상 또는 사진 촬영만으로 기존 상용 3D ToF",
+    "scanningPredictionContentSecondLine": "스캐너를 대체할 수 있는 정밀한 형상 복원이 가능합니다.",
+    "scanningPredictionContentThirdLine": "(기준정밀도 0.2mm 이내, 휘발성 스프레이 도포 시)",
+    "scanningPredictionContentFourthLine": "기존 1시간 이상 촬영해야 하는 3d 스캐닝 프로세스를",
+    "scanningPredictionContentFifthLine": "3분 이내로 단축하실 수 있습니다.",
+    "spatialVolumeTitleFirstLine": "고품질 영상 합성이 가능한",
+    "spatialVolumeTitleSecondLine": "공간 Volumetric 렌더링 기술",
+    "spatialVolumeTitleThirdLine": "",
+    "spatialVolumeContentFirstLine": "Volumetric 렌더링 기술을 통해 공간을 빠르게 캡처하고, 마치",
+    "spatialVolumeContentSecondLine": "드론으로 찍은 듯한 영상을 생성하거나 3D 공간을",
+    "spatialVolumeContentThirdLine": "웹 뷰어로 배포할 수 있습니다.",
+    "spatialVolumeContentFourthLine": "시점에 따라 달라지는 반사광이나 조명 등 기존 3D 모델로 캡처",
+    "spatialVolumeContentFifthLine": "할 수 없는 영역도 view synthesis 기반의 렌더링 엔진을 통해",
+    "spatialVolumeContentSixthLine": "3D로 캡처하고 언제 어디서나 확인이 가능합니다."
   },
   "service": {
     "3DModel": "3D model",
@@ -99,11 +139,6 @@
     "news": "NEWS",
     "newsSubTitle": "언론 속의 리빌더AI"
   },
-  "career": {
-    "lookingForCrew": "새로운 시장을 함께 개척해 나갈 동료를 찾습니다",
-    "pleaseApply": "RebuilderAI 팀이 추구하는 가치와 문화에 공감하신다면 주저하지 말고 지원하세요.",
-    "RecruitingNotices": "채용중인 공고 보러가기"
-  },
   "contact": {
     "inquire": "RebuilderAI에 궁금한 점을 문의해주세요",
     "title": "제목",
@@ -126,6 +161,11 @@
     "submit": "제출하기",
     "location": "Location",
     "locationDetail": "경기도 성남시 분당구 정자일로 95 네이버 1784 4층",
-    "navigationSearch":"\"네이버 1784\"를 네비게이션에 검색해보세요"
+    "navigationSearch": "\"네이버 1784\"를 네비게이션에 검색해보세요"
+  },
+  "career": {
+    "lookingForCrew": "새로운 시장을 함께 개척해 나갈 동료를 찾습니다",
+    "pleaseApply": "RebuilderAI 팀이 추구하는 가치와 문화에 공감하신다면 주저하지 말고 지원하세요.",
+    "RecruitingNotices": "채용중인 공고 보러가기"
   }
 }
