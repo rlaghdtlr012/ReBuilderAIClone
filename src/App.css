@@ -1,8 +1,10 @@
+* {
+  font-style: normal;
+  white-space: nowrap;
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  /* text-align: center; */
 }
 
 body,
@@ -31,4 +33,120 @@ html {
 .nav-link {
   color: white;
   text-decoration: none;
+}
+
+.nav-init {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  z-index: 999;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  color: white;
+  background-color: black;
+  position: fixed;
+}
+
+.nav-scrolled {
+  position: sticky;
+  top: 0px;
+  color: black;
+  background-color: white;
+}
+
+.nav-hidden {
+  position: absolute;
+}
+
+.main-content-video {
+  position: relative;
+  /* 추가 스타일 */
+}
+
+.main-video {
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  filter: blur(0rem);
+  width: 100%;
+  /* 필요한 경우 추가적인 스타일링 */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  /* 필요한 경우 추가적인 스타일링 */
+}
+
+.stickySide {
+  position: sticky;
+  top: 0px;
+  height: fit-content;
+  padding: 120px 0px 190px;
+  margin-right: 40px;
+}
+
+.title {
+  font-size: 2rem;
+  color: white;
+  /* 필요한 경우 추가적인 스타일링 */
+}
+
+.hero-section {
+  height: 100vh; /* 뷰포트 높이에 맞게 조정하세요 */
+  background-image: url('/src/assets/img/VRIN3D.png'); /* 실제 배경 이미지 경로를 설정하세요 */
+  background-size: cover;
+  background-attachment: fixed; /* 이 설정을 제거하면 스크롤에 따라 배경 이미지가 움직이지 않습니다 */
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+}
+
+.slider {
+  overflow: hidden;
+}
+
+.slide-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.slide {
+  width: 250px; /* 이미지의 폭에 따라 조정하세요 */
+  height: auto;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      calc(-250px * 4)
+    ); /* 4는 이미지 개수와 동일하게 조정하세요 */
+  }
 }

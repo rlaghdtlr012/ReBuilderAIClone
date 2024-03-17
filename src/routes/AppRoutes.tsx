@@ -1,10 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import MainPage from '@/pages/Main';
+import MainPage from '@/pages/MainPage';
 const AppRoutes = () => {
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
       </Routes>

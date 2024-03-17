@@ -1,40 +1,57 @@
 import { Link } from 'react-router-dom';
+import { Container, Stack } from '@mui/material';
 import MultiLanguage from './MultiLanguage';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
+  const [className, setClassName] = useState('nav-init');
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      if (position > 0 && position < 150) {
+        setClassName('nav-scrolled');
+      } else if (position >= 150) {
+        setClassName('nav-hidden');
+      } else {
+        setClassName('nav-init');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // 이펙트 정리
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
-    <nav className="navbar">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <Link to="/" className="nav-link">
-            Logo
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/services" className="nav-link">
+    <Container className={className}>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        spacing={2}
+      >
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <img src="/src/assets/img/logo.svg" />
+        </Link>
+        <Stack direction="row" spacing={2}>
+          <Link to="/services" style={{ textDecoration: 'none' }}>
             Services
           </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/technology" className="nav-link">
+          <Link to="/technology" style={{ textDecoration: 'none' }}>
             Technology
           </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/about" className="nav-link">
+          <Link to="/about" style={{ textDecoration: 'none' }}>
             About
           </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/contact" className="nav-link">
+          <Link to="/contact" style={{ textDecoration: 'none' }}>
             Contact
           </Link>
-        </li>
-        <li className="nav-item">
-          <MultiLanguage />
-        </li>
-      </ul>
-    </nav>
+        </Stack>
+        <MultiLanguage />
+      </Stack>
+    </Container>
   );
 };
 
