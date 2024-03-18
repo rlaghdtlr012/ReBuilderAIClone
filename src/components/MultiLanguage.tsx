@@ -10,14 +10,17 @@ import { styled } from '@mui/material/styles';
 import LanguageIcon from '@mui/icons-material/Language';
 
 // Func
+import { _iLanguageState } from '@/types';
 import { getLangTypeArr, getLanguageArr } from '@/common/ComFunc';
 
-const MyStyledButton = styled('button')({
-  borderRadius: 3,
-  backgroundColor: 'transparent',
+const MyStyledButton = styled('div')({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '30px',
+  height: '30px',
+  cursor: 'pointer',
   color: 'white',
-  height: 48,
-  padding: '0 30px',
 });
 
 const MultiLanguage = () => {
@@ -26,7 +29,7 @@ const MultiLanguage = () => {
   const [languagesTypes, setLanguagesTypes] = useState<string[]>([]);
   const dispatch = useDispatch();
   const selectedLanguage = useSelector(
-    (state) => state.language.selectedLanguage,
+    (state: _iLanguageState) => state.language.selectedLanguage,
   );
   const [anchorEl, setAnchorEl] = useState(null);
 

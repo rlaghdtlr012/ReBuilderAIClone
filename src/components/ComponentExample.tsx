@@ -3,13 +3,23 @@ import { useTranslation } from 'react-i18next';
 import { Grid, Typography, Box, Paper, IconButton } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { i18nLanguageType } from 'public/translation/enums';
+import { ComponentExampleProps, _iLanguageState } from '@/types';
 
-const ComponentExample = () => {
+const CommentAndVideo = ({
+  manufactureCaption,
+  manufactureTitle,
+  manufactureContentFirstLine,
+  manufactureContentSecondLine,
+  manufactureContentThirdLine,
+  videoSrcEn,
+  videoSrcKo,
+  imageExplanation,
+}: ComponentExampleProps) => {
   const { t: translate } = useTranslation();
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const selectedLanguage = useSelector(
-    (state) => state.language.selectedLanguage,
+    (state: _iLanguageState) => state.language.selectedLanguage,
   );
 
   const handleVideoPlayPause = () => {
@@ -23,6 +33,9 @@ const ComponentExample = () => {
     }
   };
 
+  const videoSrc =
+    selectedLanguage === i18nLanguageType.EN ? videoSrcEn : videoSrcKo;
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid
@@ -31,28 +44,31 @@ const ComponentExample = () => {
         sx={{ alignItems: 'center', justifyContent: 'center' }}
       >
         <Grid item xs={12} sm={6}>
-          <Typography variant="caption" display="block" gutterBottom>
-            {translate('service.manufacture')}
-          </Typography>
+          {manufactureCaption && (
+            <Typography variant="caption" display="block" gutterBottom>
+              {translate(manufactureCaption)}
+            </Typography>
+          )}
           <Typography variant="h4" gutterBottom>
-            {translate('service.manufactureTitle')}
+            {translate(manufactureTitle)}
           </Typography>
-          <Typography variant="body1" gutterBottom>
-            {translate('service.manufactureContentFirstLine')}
+          <Typography gutterBottom>
+            {translate(manufactureContentFirstLine)}
           </Typography>
-          <Typography variant="body2" gutterBottom>
-            {translate('service.manufactureContentSecondLine')}
+          <Typography gutterBottom>
+            {translate(manufactureContentSecondLine)}
           </Typography>
+          {manufactureContentThirdLine && (
+            <Typography gutterBottom>
+              {translate(manufactureContentThirdLine)}
+            </Typography>
+          )}
         </Grid>
         <Grid item xs={12} sm={6} sx={{ position: 'relative' }}>
           <Paper elevation={3}>
             <video
               ref={videoRef}
-              src={
-                selectedLanguage === i18nLanguageType.EN
-                  ? '/src/assets/videos/explore_video_en.mp4'
-                  : '/src/assets/videos/explore_video_ko.mp4'
-              }
+              src={videoSrc}
               width="100%"
               autoPlay
               loop
@@ -78,10 +94,15 @@ const ComponentExample = () => {
               <img src="/src/assets/img/playBtn.svg" alt="Play" />
             )}
           </IconButton>
+          {imageExplanation && (
+            <Typography align="right" gutterBottom>
+              {translate(imageExplanation)}
+            </Typography>
+          )}
         </Grid>
       </Grid>
     </Box>
   );
 };
 
-export default ComponentExample;
+export default CommentAndVideo;

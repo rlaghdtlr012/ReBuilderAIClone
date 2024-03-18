@@ -6,7 +6,14 @@ const Commerce3DItemCreation = () => {
   const { t: translate } = useTranslation();
 
   return (
-    <Box sx={{ flexGrow: 1, overflow: 'hidden', backgroundColor: '#fff' }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        overflow: 'hidden',
+        marginLeft: 'auto',
+        backgroundColor: '#fff',
+      }}
+    >
       <Grid container spacing={2} alignItems="center">
         <Grid item xs={12} md={6} sx={{ padding: '2rem' }}>
           <Typography variant="h6" color="textPrimary">

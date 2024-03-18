@@ -1,9 +1,8 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-
+import { i18nLanguageType } from './enums';
 import translationKR from './locales/kr.json';
 import translationEN from './locales/en.json';
-import { i18nLanguageType } from './enums';
 
 const resources = {
   [i18nLanguageType.KR]: {
@@ -17,8 +16,8 @@ const currentLanguage =
   sessionStorage.getItem('i18nextLng') ?? i18nLanguageType.KR;
 
 i18n.use(initReactI18next).init({
-  resources, // 리소스
-  lng: currentLanguage, // 초기 설정 언어
+  resources,
+  lng: currentLanguage,
 });
 
 export default i18n;

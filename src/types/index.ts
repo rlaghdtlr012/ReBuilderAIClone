@@ -1,8 +1,18 @@
-export type _tLanguage = {
-  language: _tLanguageType;
-};
+export interface _iLanguageState {
+  language: _iLanguageReducer;
+}
 
-export type _tLanguageType = {
-  KO: 'ko';
-  EN: 'en';
-};
+export interface _iLanguageReducer {
+  selectedLanguage: string;
+}
+
+export interface ComponentExampleProps {
+  manufactureCaption?: string;
+  manufactureTitle: string;
+  manufactureContentFirstLine: string;
+  manufactureContentSecondLine: string;
+  manufactureContentThirdLine?: string;
+  videoSrcEn: string;
+  videoSrcKo: string;
+  imageExplanation?: string;
+}

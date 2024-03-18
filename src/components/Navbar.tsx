@@ -7,13 +7,13 @@ const Navbar = () => {
   const [className, setClassName] = useState('nav-init');
   useEffect(() => {
     const handleScroll = () => {
-      const position = window.pageYOffset;
-      if (position > 0 && position < 150) {
-        setClassName('nav-scrolled');
-      } else if (position >= 150) {
-        setClassName('nav-hidden');
-      } else {
+      const position = window.scrollY;
+      if (position >= 0 && position < 250) {
         setClassName('nav-init');
+      } else if (position >= 250 && position < 750) {
+        setClassName('nav-middle');
+      } else if (position >= 750) {
+        setClassName('nav-hidden');
       }
     };
 
@@ -25,33 +25,43 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <Container className={className}>
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        spacing={2}
-      >
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <img src="/src/assets/img/logo.svg" />
-        </Link>
-        <Stack direction="row" spacing={2}>
-          <Link to="/services" style={{ textDecoration: 'none' }}>
-            Services
-          </Link>
-          <Link to="/technology" style={{ textDecoration: 'none' }}>
-            Technology
-          </Link>
-          <Link to="/about" style={{ textDecoration: 'none' }}>
-            About
-          </Link>
-          <Link to="/contact" style={{ textDecoration: 'none' }}>
-            Contact
-          </Link>
+    <div className={className}>
+      <Container className="nav-container">
+        <Stack direction="column" display="flex">
+          <Stack
+            paddingTop="33px"
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Link to="/" aria-lavel="Go Back To HomePage">
+              <img
+                src={
+                  className === 'nav-middle'
+                    ? '/src/assets/img/logoBlack.svg'
+                    : '/src/assets/img/logo.svg'
+                }
+              />
+            </Link>
+            <Stack flexDirection="row">
+              <Link to="/services" className="header-nav">
+                Services
+              </Link>
+              <Link to="/technology" className="header-nav">
+                Technology
+              </Link>
+              <Link to="/about" className="header-nav">
+                About
+              </Link>
+              <Link to="/contact" className="header-nav">
+                Contact
+              </Link>
+            </Stack>
+            <MultiLanguage />
+          </Stack>
         </Stack>
-        <MultiLanguage />
-      </Stack>
-    </Container>
+      </Container>
+    </div>
   );
 };
 
