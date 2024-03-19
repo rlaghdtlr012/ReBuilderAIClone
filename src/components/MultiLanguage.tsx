@@ -23,7 +23,7 @@ const MyStyledButton = styled('div')({
   color: 'white',
 });
 
-const MultiLanguage = () => {
+const MultiLanguage = ({ className }) => {
   const { i18n } = useTranslation();
   const [languages, setLanguages] = useState<string[]>([]);
   const [languagesTypes, setLanguagesTypes] = useState<string[]>([]);
@@ -41,7 +41,7 @@ const MultiLanguage = () => {
     setLanguagesTypes(fetchedLanguagesTypes);
 
     if (!sessionStorage.getItem('i18nextLng')) {
-      dispatch(setLanguage(fetchedLanguagesTypes[0]));
+      dispatch(setLanguage(fetchedLanguagesTypes[0])); // default: ko
     }
   }, []);
 
@@ -62,8 +62,12 @@ const MultiLanguage = () => {
 
   return (
     <>
-      <MyStyledButton aria-label="language" onMouseOver={openMenu}>
-        <LanguageIcon />
+      <MyStyledButton
+        className={`${className}1`}
+        aria-label="language"
+        onMouseOver={openMenu}
+      >
+        <LanguageIcon style={{ width: '100%', height: '100%' }} />
       </MyStyledButton>
       <Menu
         id="lang-menu"
@@ -71,6 +75,7 @@ const MultiLanguage = () => {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={closeMenu}
+        disableScrollLock
       >
         {languages.map((lang, i) => (
           <MenuItem

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container } from '@mui/material';
+import { Stack } from '@mui/material';
 import MainContentVideo from '@/components/MainContentVideo';
 import OptimizationSection from '@/components/OptimizationSection';
 import VRIN from '@/components/VRIN';
@@ -35,7 +35,7 @@ const MainPage = () => {
       <div className="jZmGzH">
         <VRIN scrollPosition={scrollPercent} />
         <Commerce3DItemCreation />
-        <Container className="lcMONS">
+        <Stack className="lcMONS">
           <CommentAndVideo
             manufactureCaption="service.manufacture"
             manufactureTitle="service.manufactureTitle"
@@ -63,7 +63,7 @@ const MainPage = () => {
             videoSrcEn="/src/assets/videos/explore_video3.mp4"
             videoSrcKo="/src/assets/videos/explore_video3.mp4"
           />
-        </Container>
+        </Stack>
       </div>
     </>
   );

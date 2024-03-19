@@ -28,13 +28,7 @@ const NavbarDialog = () => {
         </Button>
 
         <div className={`ldSettingDialog`}>
-          {opens ? (
-            <div className={`ldSettingDialog`}>
-              {/* <AdminNavbarLinks
-                sideSettingDialogClose={sideSettingDialogClose}
-              /> */}
-            </div>
-          ) : null}
+          {opens ? <div className={`ldSettingDialog`}></div> : null}
         </div>
       </div>
     </ClickAwayListener>

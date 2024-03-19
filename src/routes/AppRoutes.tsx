@@ -5,6 +5,7 @@ const AppRoutes = () => {
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
+        <Route path="/service" element={<MainPage />}></Route>
       </Routes>
     </Router>
   );

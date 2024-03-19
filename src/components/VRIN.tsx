@@ -1,22 +1,63 @@
 import { useTranslation } from 'react-i18next';
-import { Box, Button, Container, Stack } from '@mui/material';
+import { Box, Button, Stack, useMediaQuery } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const VRIN = ({ scrollPosition }) => {
   const { t: translate } = useTranslation();
+  const matches = useMediaQuery('(max-width: 600px)');
 
-  return (
-    <div className="vrin">
-      <Container className="vrin-content">
-        <Stack className="vrin-text">
-          <Stack display="flex" flexDirection="row" gap="20px">
+  /**
+   * 브라우저 너비(max-width: 600px)를 기준으로 다르게 렌더링
+   */
+  return matches ? (
+    <a href="https://vrin.co.kr" target="_blank">
+      <div className="hglerF">
+        <Stack className="dZCKOG">
+          <Stack
+            className="ctbuo"
+            display="flex"
+            flexDirection="row"
+            gap="20px"
+          >
+            <Stack>
+              <span className="kkXACW">
+                {translate('service.aiMake3DSubTitle')}
+              </span>
+            </Stack>
+          </Stack>
+          <span className="iODoTS">
+            <div>{translate('service.aiMake3DContentFirstLine')}</div>
+            <div>{translate('service.aiMake3DContentSecondLine')}</div>
+            <div>{translate('service.aiMake3DContentThirdLine')}</div>
+          </span>
+          <Button
+            className="kIWrRP"
+            href="https://vrin.co.kr"
+            endIcon={<ArrowForwardIosIcon />}
+            target="_blank"
+          >
+            <span className="jdawOk">{translate('service.exploreMore')}</span>
+          </Button>
+        </Stack>
+        <div
+          className="vrinBg"
+          style={{ backgroundPosition: `0% ${scrollPosition * 5 - 230}%` }}
+        ></div>
+      </div>
+    </a>
+  ) : (
+    <div className="hglerF">
+      <Stack className="jfHAHA css-1qsxih2">
+        <Stack className="dZCKOG">
+          <Stack
+            className="ctbuo"
+            display="flex"
+            flexDirection="row"
+            gap="20px"
+          >
             <Box
               component="img"
-              sx={{
-                width: '90px',
-                height: '90px',
-                fill: 'none',
-              }}
+              className=""
               src="/src/assets/img/VRINLogo.svg"
             />
             <Stack>
@@ -35,17 +76,17 @@ const VRIN = ({ scrollPosition }) => {
           </span>
           <Button
             className="kIWrRP"
-            endIcon={<ArrowForwardIosIcon />}
             href="https://vrin.co.kr"
+            endIcon={<ArrowForwardIosIcon />}
             target="_blank"
           >
-            {translate('service.exploreMore')}
+            <span className="jdawOk">{translate('service.exploreMore')}</span>
           </Button>
         </Stack>
-      </Container>
+      </Stack>
       <div
         className="vrinBg"
-        style={{ backgroundPosition: `0% ${scrollPosition * 4 - 230}%` }}
+        style={{ backgroundPosition: `0% ${scrollPosition * 5 - 230}%` }}
       ></div>
     </div>
   );

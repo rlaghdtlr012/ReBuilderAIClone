@@ -1,8 +1,11 @@
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Grid, Stack } from '@mui/material';
+import { Grid, Stack, useMediaQuery } from '@mui/material';
 
 const Commerce3DItemCreation = () => {
   const { t: translate } = useTranslation();
+  const [isNarrowWidth, setIsNarrowWidth] = useState(window.innerWidth <= 768);
+  const matches = useMediaQuery('(max-width: 768px)');
 
   const images = [
     '/src/assets/img/flyingCarPerson.png',
@@ -11,9 +14,16 @@ const Commerce3DItemCreation = () => {
     '/src/assets/img/pinkHairPerson.png',
   ];
 
+  useEffect(() => {
+    setIsNarrowWidth(matches);
+  }, [matches]);
+
   return (
-    <div id="sdk" className="jTYySx">
-      <Grid className="qsxih2" item xs={12} md={6}>
+    <div id="sdk" className="jKGyTm">
+      <Grid
+        className="eyPTAv"
+        style={{ paddingTop: '9%', paddingBottom: '12%' }}
+      >
         <Stack display="flex" flexDirection="column" whiteSpace="pre-wrap">
           <Stack maxWidth="280px">
             <span className="hOJyEv">
@@ -30,17 +40,27 @@ const Commerce3DItemCreation = () => {
             {translate('service.eCommerceMarketingContentSecondLine')}
           </span>
         </Stack>
-        <Grid className="fShRfI" item xs={12} md={6}>
-          <div className="slider">
-            <div className="slide-track">
-              {[...images, ...images].map((src, index) => (
-                <div className="slide" key={index}>
-                  <img src={src} alt={`Slide ${index}`} />
-                </div>
-              ))}
+        {!isNarrowWidth ? (
+          <Grid className="fShRfI">
+            <div className="slider">
+              <div className="slide-track">
+                {[...images, ...images].map((src, index) => (
+                  <div className="slide" key={index}>
+                    <img src={src} height="auto" alt={`Slide ${index}`} />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </Grid>
+          </Grid>
+        ) : (
+          <Stack className="bFIKxl">
+            {images.map((src, index) => (
+              <div style={{ position: 'relative' }} key={index}>
+                <img src={src} width="100%" height="auto" />
+              </div>
+            ))}
+          </Stack>
+        )}
       </Grid>
     </div>
   );
