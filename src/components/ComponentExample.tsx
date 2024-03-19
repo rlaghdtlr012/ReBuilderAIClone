@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { IconButton, Stack } from '@mui/material';
+import { Grid, IconButton } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { i18nLanguageType } from 'public/translation/enums';
 import { ComponentExampleProps, _iLanguageState } from '@/types';
@@ -38,13 +38,8 @@ const CommentAndVideo = ({
     selectedLanguage === i18nLanguageType.EN ? videoSrcEn : videoSrcKo;
 
   return (
-    <Stack className="css-1mvb0xs" style={style}>
-      <Stack
-        display="flex"
-        flexDirection="column"
-        width="100%"
-        whiteSpace="pre-wrap"
-      >
+    <Grid container spacing={2} className="css-1mvb0xs" style={style}>
+      <Grid className="eyPTAv" item lg={12} xl={6}>
         {manufactureCaption && (
           <span className="hOJyEv">{translate(manufactureCaption)}</span>
         )}
@@ -59,8 +54,8 @@ const CommentAndVideo = ({
             {translate(manufactureContentThirdLine)}
           </span>
         )}
-      </Stack>
-      <Stack display="flex" flexDirection="column" margin="0 0 0 40px">
+      </Grid>
+      <Grid item lg={12} xl={6}>
         <div className="bTuFkA">
           <video
             ref={videoRef}
@@ -93,8 +88,8 @@ const CommentAndVideo = ({
         {imageExplanation && (
           <span className="eoJALG">{translate(imageExplanation)}</span>
         )}
-      </Stack>
-    </Stack>
+      </Grid>
+    </Grid>
   );
 };
 

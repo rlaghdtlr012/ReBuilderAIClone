@@ -13,8 +13,8 @@ const Commerce3DItemCreation = () => {
 
   return (
     <div id="sdk" className="jTYySx">
-      <Grid container item xs={12} md={6}>
-        <Stack display="flex" flexDirection="column">
+      <Grid className="qsxih2" item xs={12} md={6}>
+        <Stack display="flex" flexDirection="column" whiteSpace="pre-wrap">
           <Stack maxWidth="280px">
             <span className="hOJyEv">
               {translate('service.eCommerceMarketing')}
@@ -30,7 +30,7 @@ const Commerce3DItemCreation = () => {
             {translate('service.eCommerceMarketingContentSecondLine')}
           </span>
         </Stack>
-        <Grid container item xs={12} md={6}>
+        <Grid className="fShRfI" item xs={12} md={6}>
           <div className="slider">
             <div className="slide-track">
               {[...images, ...images].map((src, index) => (

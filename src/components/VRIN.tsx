@@ -45,7 +45,7 @@ const VRIN = ({ scrollPosition }) => {
       </Container>
       <div
         className="vrinBg"
-        style={{ backgroundPosition: `0% ${scrollPosition - 20}%` }}
+        style={{ backgroundPosition: `0% ${scrollPosition * 4 - 230}%` }}
       ></div>
     </div>
   );

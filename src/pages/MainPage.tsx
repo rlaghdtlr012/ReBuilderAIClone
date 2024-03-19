@@ -30,7 +30,7 @@ const MainPage = () => {
     <>
       <MainContentVideo scrollPosition={scrollPercent} />
       <div className="dXuRMr">
-        <OptimizationSection />
+        <OptimizationSection scrollPosition={scrollPercent} />
       </div>
       <div className="jZmGzH">
         <VRIN scrollPosition={scrollPercent} />

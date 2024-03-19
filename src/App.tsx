@@ -1,4 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ThemeProvider } from '@mui/material';
+import { theme } from './common/theme';
 import AppRoutes from './routes/AppRoutes';
 import './App.css';
 
@@ -16,11 +18,11 @@ function App() {
   });
   return (
     <>
-      {/* <Layout> */}
-      <QueryClientProvider client={client}>
-        <AppRoutes />
-      </QueryClientProvider>
-      {/* </Layout> */}
+      <ThemeProvider theme={theme}>
+        <QueryClientProvider client={client}>
+          <AppRoutes />
+        </QueryClientProvider>
+      </ThemeProvider>
     </>
   );
 }

@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Container, Stack, Box } from '@mui/material';
 import { i18nLanguageType } from 'public/translation/enums';
 import { _iLanguageState } from '@/types';
 
-const OptimizationSection = () => {
+const OptimizationSection = ({ scrollPosition }) => {
   const { t: translate } = useTranslation();
   const selectedLanguage = useSelector(
     (state: _iLanguageState) => state.language.selectedLanguage,
@@ -22,8 +22,22 @@ const OptimizationSection = () => {
     setIsHovered({ ...isHovered, [videoId]: false });
   };
 
+  const getSidebarClass = (order) => {
+    if (
+      (order === 1 && scrollPosition < 35) ||
+      (order === 2 && scrollPosition >= 35)
+    ) {
+      return 'sidebar-text sidebar-focus-text';
+    }
+    return 'sidebar-text';
+  };
+
+  useEffect(() => {
+    console.log(scrollPosition);
+  }, [scrollPosition]);
+
   return (
-    <Container maxWidth="lg" id="management">
+    <Container maxWidth="xl" id="management">
       <Stack flexDirection="row">
         <Stack
           position="sticky"
@@ -36,10 +50,12 @@ const OptimizationSection = () => {
           <span className="sidebar-title-text">
             {translate('service.3DModel')}
           </span>
-          <span className="sidebar-text">
+          <span className={getSidebarClass(1)}>
             {translate('service.optimization')}
           </span>
-          <span className="sidebar-text">{translate('service.usage')}</span>
+          <span className={getSidebarClass(2)}>
+            {translate('service.usage')}
+          </span>
         </Stack>
         <Stack>
           <Stack sx={{ paddingTop: '120px' }}>

@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
-import { Container, Stack } from '@mui/material';
+import { Button, Container, Hidden, Stack } from '@mui/material';
 import MultiLanguage from './MultiLanguage';
 import { useEffect, useState } from 'react';
+import NavbarDialog from './NavbarDialog';
 
 const Navbar = ({ scrollPosition }) => {
   const [className, setClassName] = useState('nav-init');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     if (scrollPosition >= 0 && scrollPosition < 5) {
@@ -16,6 +18,17 @@ const Navbar = ({ scrollPosition }) => {
     }
   }, [scrollPosition]);
 
+  const menuItems = [
+    { name: 'Services', path: '/services' },
+    { name: 'Technology', path: '/technology' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <div className={className}>
       <Container className="nav-container">
@@ -26,30 +39,31 @@ const Navbar = ({ scrollPosition }) => {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Link to="/" aria-lavel="Go Back To HomePage">
+            <Link to="/" aria-label="Go Back To HomePage">
               <img
                 src={
                   className === 'nav-middle'
                     ? '/src/assets/img/logoBlack.svg'
                     : '/src/assets/img/logo.svg'
                 }
+                alt="RebuilderAI Logo"
               />
             </Link>
-            <Stack flexDirection="row">
-              <Link to="/services" className="header-nav">
-                Services
-              </Link>
-              <Link to="/technology" className="header-nav">
-                Technology
-              </Link>
-              <Link to="/about" className="header-nav">
-                About
-              </Link>
-              <Link to="/contact" className="header-nav">
-                Contact
-              </Link>
-            </Stack>
-            <MultiLanguage />
+            <Hidden mdDown implementation="css">
+              <Stack flexDirection="row">
+                {menuItems.map((item) => (
+                  <Link key={item.name} to={item.path} className="header-nav">
+                    {item.name}
+                  </Link>
+                ))}
+              </Stack>
+              <MultiLanguage />
+            </Hidden>
+            <Hidden mdUp implementation="css">
+              <Button onClick={toggleMobileMenu}>
+                <NavbarDialog />
+              </Button>
+            </Hidden>
           </Stack>
         </Stack>
       </Container>

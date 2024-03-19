@@ -132,6 +132,28 @@ html {
   background-position: 0% 24.5455%;
 }
 
+#sdk {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 200px 0px 0px 12px;
+}
+
+.fShRfI {
+  position: absolute;
+  top: 200px;
+  right: 0px;
+  width: 54.7%;
+}
+.qsxih2 {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  box-sizing: border-box;
+  margin-right: auto;
+  padding-top: 4%;
+  padding-bottom: 12%;
+}
 .kxJuDs {
   color: rgb(93, 108, 250);
   font-size: 2rem;
@@ -225,6 +247,13 @@ html {
   margin-top: 10px;
 }
 
+.eyPTAv {
+  display: flex;
+  flex-direction: column !important;
+  width: 100%;
+  white-space: pre-wrap;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -254,9 +283,16 @@ html {
 }
 
 .sidebar-text {
-  font-size: 4.8rem;
+  font-weight: 500;
+  font-size: 3.4rem;
+  color: rgb(189, 193, 199);
   line-height: 140%;
   margin-bottom: 12px;
+}
+
+.sidebar-focus-text {
+  font-weight: 600;
+  color: rgb(0, 0, 0);
 }
 
 .fontClass {
@@ -353,5 +389,34 @@ html {
   85%,
   100% {
     transform: translateX(-1000px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-mobile-menu {
+  }
+
+  .nav-mobile-menu.open {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .qsxih2 {
+    max-width: 1200px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .qsxih2 {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
