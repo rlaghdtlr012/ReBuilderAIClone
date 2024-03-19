@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button, Hidden, Stack } from '@mui/material';
 import MultiLanguage from './MultiLanguage';
 import NavbarDialog from './NavbarDialog';
+import logo from '@/assets/img/logo.svg';
+import logoBlack from '@/assets/img/logoBlack.svg';
 
 const Navbar = ({ scrollPosition }) => {
   const navigate = useNavigate();
@@ -45,11 +47,7 @@ const Navbar = ({ scrollPosition }) => {
           >
             <Link to="/" aria-label="Go Back To HomePage">
               <img
-                src={
-                  className === 'nav-middle'
-                    ? '/src/assets/img/logoBlack.svg'
-                    : '/src/assets/img/logo.svg'
-                }
+                src={className === 'nav-middle' ? logoBlack : logo}
                 alt="RebuilderAI Logo"
               />
             </Link>

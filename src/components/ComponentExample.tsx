@@ -4,6 +4,8 @@ import { Stack } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { i18nLanguageType } from 'public/translation/enums';
 import { ComponentExampleProps, _iLanguageState } from '@/types';
+import playBtn from '@/assets/img/playBtn.svg';
+import pauseBtn from '@/assets/img/pauseBtn.svg';
 
 const CommentAndVideo = ({
   style,
@@ -68,9 +70,9 @@ const CommentAndVideo = ({
           />
           <div className="fnOrPq" onClick={handleVideoPlayPause}>
             {isPlaying ? (
-              <img src="/src/assets/img/pauseBtn.svg" alt="Pause" />
+              <img src={pauseBtn} alt="Pause" />
             ) : (
-              <img src="/src/assets/img/playBtn.svg" alt="Play" />
+              <img src={playBtn} alt="Play" />
             )}
           </div>
         </Stack>

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Stack, useMediaQuery } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import VRINLogo from '@/assets/img/VRINLogo.svg';
 
 const VRIN = ({ scrollPosition }) => {
   const { t: translate } = useTranslation();
@@ -55,11 +56,7 @@ const VRIN = ({ scrollPosition }) => {
             flexDirection="row"
             gap="20px"
           >
-            <Box
-              component="img"
-              className=""
-              src="/src/assets/img/VRINLogo.svg"
-            />
+            <Box component="img" className="" src={VRINLogo} />
             <Stack>
               <span className="kxJuDs">
                 {translate('service.aiMake3DTitle')}

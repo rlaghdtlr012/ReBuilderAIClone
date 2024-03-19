@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
+import mainVideo from '@/assets/videos/main_video.mp4';
 
 const MainContentVideo = ({ scrollPosition }) => {
   // Navbar 스타일 변경을 위한 상태
@@ -38,7 +39,7 @@ const MainContentVideo = ({ scrollPosition }) => {
           playsInline
           autoPlay
           muted
-          src="/src/assets/videos/main_video.mp4"
+          src={mainVideo}
           style={{
             transform: `matrix(${matrix}, 0, 0, ${matrix}, 0, 0)`,
             filter: `blur(${blur}rem)`,

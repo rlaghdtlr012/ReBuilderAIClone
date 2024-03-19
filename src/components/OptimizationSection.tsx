@@ -4,6 +4,16 @@ import { useSelector } from 'react-redux';
 import { Container, Stack, Box, useMediaQuery } from '@mui/material';
 import { i18nLanguageType } from 'public/translation/enums';
 import { _iLanguageState } from '@/types';
+import plusIcon from '@/assets/img/plusIcon.svg';
+import shoes from '@/assets/img/shoes.png';
+import chair_en1 from '@/assets/img/chair_en(1).png';
+import chair_en2 from '@/assets/img/chair_en(2).png';
+import chair_ko1 from '@/assets/img/chair_ko(1).png';
+import chair_ko2 from '@/assets/img/chair_ko(2).png';
+import service_video_pc_en from '@/assets/videos/service_video_pc_en.mp4';
+import service_video_pc_ko from '@/assets/videos/service_video_pc_ko.mp4';
+import service_video2_pc_en from '@/assets/videos/service_video2_pc_en.mp4';
+import service_video2_pc_ko from '@/assets/videos/service_video2_pc_ko.mp4';
 
 const OptimizationSection = ({ scrollPosition }) => {
   const { t: translate } = useTranslation();
@@ -66,7 +76,7 @@ const OptimizationSection = ({ scrollPosition }) => {
                 <Box
                   component="img"
                   sx={{ width: '100%', maxWidth: '1134px' }}
-                  src="/src/assets/img/shoes.png"
+                  src={shoes}
                   alt="Optimized 3D model"
                 />
               </Stack>
@@ -91,8 +101,8 @@ const OptimizationSection = ({ scrollPosition }) => {
                       playsInline
                       src={
                         selectedLanguage === i18nLanguageType.EN
-                          ? '/src/assets/videos/service_video_pc_en.mp4'
-                          : '/src/assets/videos/service_video_pc_ko.mp4'
+                          ? service_video_pc_en
+                          : service_video_pc_ko
                       }
                       style={{ maxWidth: '556px' }}
                     ></video>
@@ -104,7 +114,7 @@ const OptimizationSection = ({ scrollPosition }) => {
                         bottom: '20px',
                         zIndex: 10,
                       }}
-                      src="/src/assets/img/plusIcon.svg"
+                      src={plusIcon}
                     />
                     {isHovered.video1 && (
                       <Box
@@ -123,8 +133,8 @@ const OptimizationSection = ({ scrollPosition }) => {
                         }}
                         src={
                           selectedLanguage === i18nLanguageType.EN
-                            ? '/src/assets/img/chair_en(1).png'
-                            : '/src/assets/img/chair_ko(1).png'
+                            ? chair_en1
+                            : chair_ko1
                         }
                         alt="Video overlay"
                       />
@@ -144,8 +154,8 @@ const OptimizationSection = ({ scrollPosition }) => {
                       playsInline
                       src={
                         selectedLanguage === i18nLanguageType.EN
-                          ? '/src/assets/videos/service_video2_pc_en.mp4'
-                          : '/src/assets/videos/service_video2_pc_ko.mp4'
+                          ? service_video2_pc_en
+                          : service_video2_pc_en
                       }
                       style={{ maxWidth: '556px' }}
                     ></video>
@@ -157,7 +167,7 @@ const OptimizationSection = ({ scrollPosition }) => {
                         bottom: '20px',
                         zIndex: 10,
                       }}
-                      src="/src/assets/img/plusIcon.svg"
+                      src={plusIcon}
                     />
                     {isHovered.video2 && (
                       <Box
@@ -176,8 +186,8 @@ const OptimizationSection = ({ scrollPosition }) => {
                         }}
                         src={
                           selectedLanguage === i18nLanguageType.EN
-                            ? '/src/assets/img/chair_en(2).png'
-                            : '/src/assets/img/chair_ko(2).png'
+                            ? chair_en2
+                            : chair_ko2
                         }
                         alt="Video overlay"
                       />
@@ -205,7 +215,7 @@ const OptimizationSection = ({ scrollPosition }) => {
                 <Box
                   component="img"
                   sx={{ width: '100%', maxWidth: '1134px' }}
-                  src="/src/assets/img/shoes.png"
+                  src={shoes}
                   alt="Optimized 3D model"
                 />
               </Stack>
@@ -236,8 +246,8 @@ const OptimizationSection = ({ scrollPosition }) => {
                     playsInline
                     src={
                       selectedLanguage === i18nLanguageType.EN
-                        ? '/src/assets/videos/service_video_pc_en.mp4'
-                        : '/src/assets/videos/service_video_pc_ko.mp4'
+                        ? service_video_pc_en
+                        : service_video_pc_ko
                     }
                     style={{ maxWidth: '556px' }}
                   ></video>
@@ -249,7 +259,7 @@ const OptimizationSection = ({ scrollPosition }) => {
                       bottom: '20px',
                       zIndex: 10,
                     }}
-                    src="/src/assets/img/plusIcon.svg"
+                    src={plusIcon}
                   />
                   {isHovered.video1 && (
                     <Box
@@ -268,8 +278,8 @@ const OptimizationSection = ({ scrollPosition }) => {
                       }}
                       src={
                         selectedLanguage === i18nLanguageType.EN
-                          ? '/src/assets/img/chair_en(1).png'
-                          : '/src/assets/img/chair_ko(1).png'
+                          ? chair_en1
+                          : chair_ko1
                       }
                       alt="Video overlay"
                     />
@@ -298,8 +308,8 @@ const OptimizationSection = ({ scrollPosition }) => {
                     playsInline
                     src={
                       selectedLanguage === i18nLanguageType.EN
-                        ? '/src/assets/videos/service_video2_pc_en.mp4'
-                        : '/src/assets/videos/service_video2_pc_ko.mp4'
+                        ? service_video2_pc_en
+                        : service_video2_pc_ko
                     }
                     style={{ maxWidth: '556px' }}
                   ></video>
@@ -311,7 +321,7 @@ const OptimizationSection = ({ scrollPosition }) => {
                       bottom: '20px',
                       zIndex: 10,
                     }}
-                    src="/src/assets/img/plusIcon.svg"
+                    src={plusIcon}
                   />
                   {isHovered.video2 && (
                     <Box
@@ -330,8 +340,8 @@ const OptimizationSection = ({ scrollPosition }) => {
                       }}
                       src={
                         selectedLanguage === i18nLanguageType.EN
-                          ? '/src/assets/img/chair_en(2).png'
-                          : '/src/assets/img/chair_ko(2).png'
+                          ? chair_en2
+                          : chair_ko2
                       }
                       alt="Video overlay"
                     />

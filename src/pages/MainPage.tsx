@@ -5,6 +5,10 @@ import OptimizationSection from '@/components/OptimizationSection';
 import VRIN from '@/components/VRIN';
 import Commerce3DItemCreation from '@/components/Commerce3DItemCreation';
 import CommentAndVideo from '@/components/ComponentExample';
+import explore_video_en from '@/assets/videos/explore_video_en.mp4';
+import explore_video_ko from '@/assets/videos/explore_video_ko.mp4';
+import explore_video2 from '@/assets/videos/explore_video2.mp4';
+import explore_video3 from '@/assets/videos/explore_video3.mp4';
 
 const MainPage = () => {
   const [scrollPercent, setScrollPercent] = useState(0);
@@ -41,8 +45,8 @@ const MainPage = () => {
             manufactureTitle="service.manufactureTitle"
             manufactureContentFirstLine="service.manufactureContentFirstLine"
             manufactureContentSecondLine="service.manufactureContentSecondLine"
-            videoSrcEn="/src/assets/videos/explore_video_en.mp4"
-            videoSrcKo="/src/assets/videos/explore_video_ko.mp4"
+            videoSrcEn={explore_video_en}
+            videoSrcKo={explore_video_ko}
           />
           <CommentAndVideo
             style={{ paddingTop: '200px' }}
@@ -50,8 +54,8 @@ const MainPage = () => {
             manufactureContentFirstLine="service.damageContentFirstLine"
             manufactureContentSecondLine="service.damageContentSecondLine"
             manufactureContentThirdLine="service.damageContentThirdLine"
-            videoSrcEn="/src/assets/videos/explore_video2.mp4"
-            videoSrcKo="/src/assets/videos/explore_video2.mp4"
+            videoSrcEn={explore_video2}
+            videoSrcKo={explore_video2}
           />
           <CommentAndVideo
             style={{ paddingTop: '200px' }}
@@ -60,8 +64,8 @@ const MainPage = () => {
             manufactureContentSecondLine="service.labelingContentSecondLine"
             manufactureContentThirdLine="service.labelingContentThirdLine"
             imageExplanation="service.imageExplanation"
-            videoSrcEn="/src/assets/videos/explore_video3.mp4"
-            videoSrcKo="/src/assets/videos/explore_video3.mp4"
+            videoSrcEn={explore_video3}
+            videoSrcKo={explore_video3}
           />
         </Stack>
       </div>

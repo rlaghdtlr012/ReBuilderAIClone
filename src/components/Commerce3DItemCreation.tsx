@@ -1,18 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Grid, Stack, useMediaQuery } from '@mui/material';
+import flyingCarPerson from '@/assets/img/flyingCarPerson.png';
+import people from '@/assets/img/people.png';
+import pomadePerson from '@/assets/img/pomadePerson.png';
+import pinkHairPerson from '@/assets/img/pinkHairPerson.png';
 
 const Commerce3DItemCreation = () => {
   const { t: translate } = useTranslation();
   const [isNarrowWidth, setIsNarrowWidth] = useState(window.innerWidth <= 768);
   const matches = useMediaQuery('(max-width: 768px)');
 
-  const images = [
-    '/src/assets/img/flyingCarPerson.png',
-    '/src/assets/img/people.png',
-    '/src/assets/img/pomadePerson.png',
-    '/src/assets/img/pinkHairPerson.png',
-  ];
+  const images = [flyingCarPerson, people, pomadePerson, pinkHairPerson];
 
   useEffect(() => {
     setIsNarrowWidth(matches);
