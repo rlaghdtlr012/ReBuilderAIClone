@@ -7,6 +7,7 @@ export interface _iLanguageReducer {
 }
 
 export interface ComponentExampleProps {
+  style?: React.CSSProperties;
   manufactureCaption?: string;
   manufactureTitle: string;
   manufactureContentFirstLine: string;

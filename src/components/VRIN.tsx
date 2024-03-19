@@ -1,23 +1,40 @@
-import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, Container, Stack } from '@mui/material';
+import { Box, Button, Container, Stack } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-const VRIN = () => {
+const VRIN = ({ scrollPosition }) => {
   const { t: translate } = useTranslation();
 
   return (
-    <div className="hero-section" style={{}}>
-      <Container className="hero-content">
-        // TODO 여기부터 해야함
-        <Stack className="hero-text">
-          <h1>{translate('service.aiMake3DTitle')}</h1>
-          <p>{translate('service.aiMake3DSubTitle')}</p>
-          <p>{translate('service.aiMake3DContentFirstLine')}</p>
-          <p>{translate('service.aiMake3DContentSecondLine')}</p>
-          <p>{translate('service.aiMake3DContentThirdLine')}</p>
+    <div className="vrin">
+      <Container className="vrin-content">
+        <Stack className="vrin-text">
+          <Stack display="flex" flexDirection="row" gap="20px">
+            <Box
+              component="img"
+              sx={{
+                width: '90px',
+                height: '90px',
+                fill: 'none',
+              }}
+              src="/src/assets/img/VRINLogo.svg"
+            />
+            <Stack>
+              <span className="kxJuDs">
+                {translate('service.aiMake3DTitle')}
+              </span>
+              <span className="kkXACW">
+                {translate('service.aiMake3DSubTitle')}
+              </span>
+            </Stack>
+          </Stack>
+          <span className="iODoTS">
+            <div>{translate('service.aiMake3DContentFirstLine')}</div>
+            <div>{translate('service.aiMake3DContentSecondLine')}</div>
+            <div>{translate('service.aiMake3DContentThirdLine')}</div>
+          </span>
           <Button
-            variant="contained"
+            className="kIWrRP"
             endIcon={<ArrowForwardIosIcon />}
             href="https://vrin.co.kr"
             target="_blank"
@@ -26,6 +43,10 @@ const VRIN = () => {
           </Button>
         </Stack>
       </Container>
+      <div
+        className="vrinBg"
+        style={{ backgroundPosition: `0% ${scrollPosition - 20}%` }}
+      ></div>
     </div>
   );
 };

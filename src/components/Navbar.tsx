@@ -3,27 +3,19 @@ import { Container, Stack } from '@mui/material';
 import MultiLanguage from './MultiLanguage';
 import { useEffect, useState } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ scrollPosition }) => {
   const [className, setClassName] = useState('nav-init');
+
   useEffect(() => {
-    const handleScroll = () => {
-      const position = window.scrollY;
-      if (position >= 0 && position < 250) {
-        setClassName('nav-init');
-      } else if (position >= 250 && position < 750) {
-        setClassName('nav-middle');
-      } else if (position >= 750) {
-        setClassName('nav-hidden');
-      }
-    };
+    if (scrollPosition >= 0 && scrollPosition < 5) {
+      setClassName('nav-init');
+    } else if (scrollPosition >= 5 && scrollPosition < 10) {
+      setClassName('nav-middle');
+    } else if (scrollPosition >= 10) {
+      setClassName('nav-hidden');
+    }
+  }, [scrollPosition]);
 
-    window.addEventListener('scroll', handleScroll);
-
-    // 이펙트 정리
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
   return (
     <div className={className}>
       <Container className="nav-container">

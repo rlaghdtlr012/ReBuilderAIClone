@@ -1,11 +1,12 @@
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Grid, Typography, Box, Paper, IconButton } from '@mui/material';
+import { IconButton, Stack } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { i18nLanguageType } from 'public/translation/enums';
 import { ComponentExampleProps, _iLanguageState } from '@/types';
 
 const CommentAndVideo = ({
+  style,
   manufactureCaption,
   manufactureTitle,
   manufactureContentFirstLine,
@@ -37,51 +38,45 @@ const CommentAndVideo = ({
     selectedLanguage === i18nLanguageType.EN ? videoSrcEn : videoSrcKo;
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid
-        container
-        spacing={2}
-        sx={{ alignItems: 'center', justifyContent: 'center' }}
+    <Stack className="css-1mvb0xs" style={style}>
+      <Stack
+        display="flex"
+        flexDirection="column"
+        width="100%"
+        whiteSpace="pre-wrap"
       >
-        <Grid item xs={12} sm={6}>
-          {manufactureCaption && (
-            <Typography variant="caption" display="block" gutterBottom>
-              {translate(manufactureCaption)}
-            </Typography>
-          )}
-          <Typography variant="h4" gutterBottom>
-            {translate(manufactureTitle)}
-          </Typography>
-          <Typography gutterBottom>
-            {translate(manufactureContentFirstLine)}
-          </Typography>
-          <Typography gutterBottom>
-            {translate(manufactureContentSecondLine)}
-          </Typography>
-          {manufactureContentThirdLine && (
-            <Typography gutterBottom>
-              {translate(manufactureContentThirdLine)}
-            </Typography>
-          )}
-        </Grid>
-        <Grid item xs={12} sm={6} sx={{ position: 'relative' }}>
-          <Paper elevation={3}>
-            <video
-              ref={videoRef}
-              src={videoSrc}
-              width="100%"
-              autoPlay
-              loop
-              muted
-              style={{ display: 'block' }}
-            />
-          </Paper>
+        {manufactureCaption && (
+          <span className="hOJyEv">{translate(manufactureCaption)}</span>
+        )}
+        <span className="jsGokG">{translate(manufactureTitle)}</span>
+        <span className="htnOkJ">
+          {translate(manufactureContentFirstLine)}
+          <br />
+          {translate(manufactureContentSecondLine)}
+        </span>
+        {manufactureContentThirdLine && (
+          <span className="htnOkJ">
+            {translate(manufactureContentThirdLine)}
+          </span>
+        )}
+      </Stack>
+      <Stack display="flex" flexDirection="column" margin="0 0 0 40px">
+        <div className="bTuFkA">
+          <video
+            ref={videoRef}
+            src={videoSrc}
+            width="100%"
+            height="auto"
+            loop
+            muted
+            autoPlay
+          />
           <IconButton
             onClick={handleVideoPlayPause}
             sx={{
               position: 'absolute',
-              bottom: 16,
-              right: 16,
+              bottom: 20,
+              right: 20,
               backgroundColor: 'rgba(255,255,255,0.7)',
               '&:hover': {
                 backgroundColor: 'rgba(255,255,255,0.9)',
@@ -94,14 +89,12 @@ const CommentAndVideo = ({
               <img src="/src/assets/img/playBtn.svg" alt="Play" />
             )}
           </IconButton>
-          {imageExplanation && (
-            <Typography align="right" gutterBottom>
-              {translate(imageExplanation)}
-            </Typography>
-          )}
-        </Grid>
-      </Grid>
-    </Box>
+        </div>
+        {imageExplanation && (
+          <span className="eoJALG">{translate(imageExplanation)}</span>
+        )}
+      </Stack>
+    </Stack>
   );
 };
 

@@ -1,30 +1,21 @@
 import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 
-const MainContentVideo = () => {
+const MainContentVideo = ({ scrollPosition }) => {
   // Navbar 스타일 변경을 위한 상태
   const [className, setClassName] = useState('init');
 
   useEffect(() => {
-    const handleScroll = () => {
-      const position = window.scrollY;
-      if (position > 250) {
-        setClassName('middle');
-      } else {
-        setClassName('init');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    if (scrollPosition > 5) {
+      setClassName('middle');
+    } else {
+      setClassName('init');
+    }
+  }, [scrollPosition]);
 
   return (
     <div id="main" className={className}>
-      <Navbar />
+      <Navbar scrollPosition={scrollPosition} />
       <div className={`main-content-video`}>
         <video
           id="main-video"
